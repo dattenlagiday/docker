@@ -8,11 +8,9 @@ services:
     volumes:
       - "mongodb_data:/bitnami/mongodb"
     environment:
-      # for development
-      # - ALLOW_EMPTY_PASSWORD=yes
-      - MONGODB_ROOT_PASSWORD=root
-      - MONGODB_USERNAME=usename
-      - MONGODB_PASSWORD=password
-      - MONGODB_DATABASE=database
+      - ALLOW_EMPTY_PASSWORD=yes
+      - MONGODB_USERNAME=datnt
+      - MONGODB_PASSWORD=111
+      - MONGODB_DATABASE=db
 volumes:
   mongodb_data:

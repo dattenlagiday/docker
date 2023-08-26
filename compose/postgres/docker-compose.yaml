@@ -9,9 +9,9 @@ services:
     volumes:
       - "postgresql_data:/bitnami/postgresql"
     environment:
-      POSTGRESQL_USERNAME: user
-      POSTGRESQL_PASSWORD: password
-      POSTGRESQL_DATABASE: database
+      - POSTGRESQL_USERNAME=datnt
+      - POSTGRESQL_PASSWORD=111
+      - POSTGRESQL_DATABASE=db
   pgadmin:
     container_name: pgadmin
     image: dpage/pgadmin4:latest
@@ -23,8 +23,10 @@ services:
     volumes:
       - "pgadmin_data:/var/lib/pgadmin"
     environment:
-      PGADMIN_DEFAULT_EMAIL: email@example.com
-      PGADMIN_DEFAULT_PASSWORD: password
+      - PGADMIN_DEFAULT_EMAIL=datnt@email.com
+      - PGADMIN_DEFAULT_PASSWORD=111
 volumes:
   postgresql_data:
+    driver: local
   pgadmin_data:
+    driver: local
